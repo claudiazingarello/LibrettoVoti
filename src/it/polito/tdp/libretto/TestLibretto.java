@@ -11,6 +11,7 @@ public class TestLibretto {
 		
 		
 		Libretto libr = new Libretto();
+	
 		
 		//crea 10 nuovi voti e aggiungi a classe Libretto
 		libr.add(new Voto(30, "Analisi I", LocalDate.of(2017, 1, 15)));
@@ -32,6 +33,16 @@ public class TestLibretto {
 		System.out.println(a1);
 		System.out.println(a3);
 		
+		Voto giusto = new Voto(18,"Geometria", LocalDate.now());
+		Voto sbagliato = new Voto(28, "Geometria", LocalDate.now());
+		Voto mancante = new Voto(30, "Merendine", LocalDate.now());
+		
+		System.out.format("Il voto %s è %s\n", giusto.toString(), 
+				libr.esisteGiaVoto(giusto));
+		System.out.format("Il voto %s è %s\n", giusto.toString(), 
+				libr.esisteGiaVoto(sbagliato));
+		System.out.format("Il voto %s è %s\n", giusto.toString(), 
+				libr.esisteGiaVoto(mancante));
 	}
 
 }
